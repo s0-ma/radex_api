@@ -1,8 +1,8 @@
-#radex_api
-----
+radex_api
+====
 Call RADEX on-line version from python.
 
-##Overview
+Overview
 ----
 
 Call RADEX on-line version from python.  
@@ -11,7 +11,7 @@ This script simply calls the RADEX on-line page.
 Please do not apply heavy load on the RADEX server.  
 If needed, please use official off-line version.
 
-##How to use
+How to use
 ----
 syntax:
 
@@ -19,7 +19,7 @@ syntax:
 
 example:
 
-    $ ./radex.py 13co 50 500 2.73 30 134 1e14 1.0
+    $ ./radex.py 13co 50 500 2.73 30 1e4 1e14 1.0
 
 
 If a key for the molecule is needed, please check the HTML source of the RADEX on-line page,  
