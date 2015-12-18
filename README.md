@@ -1,6 +1,7 @@
 radex_api
 ====
-Call RADEX on-line version from python.
+Call RADEX on-line version from python.  
+(http://www.sron.rug.nl/~vdtak/radex/)
 
 Overview
 ----
@@ -22,7 +23,7 @@ example:
     $ ./radex.py 13co 50 500 2.73 30 1e4 1e14 1.0
 
 
-If a key for the molecule is needed, please check the HTML source of the RADEX on-line page,  
+If keys for the names of  molecule are needed, please check the HTML source of the RADEX on-line page,  
 or type:
 
     $ ./radex.py list
