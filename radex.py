@@ -98,15 +98,13 @@ class RADEX:
                 }
 
         q = urllib.urlencode(values)
-        req = urllib2.Request(self.base_url, q)
+        req = urllib2.Request(self.base_url+"?"+q)
         response = urllib2.urlopen(req)
 
         return response.read()
 
     def get(self, molfile, fmin, fmax, tbg, tkin, nh2, cold, dv):
         html = self._getHTML(molfile, fmin, fmax, tbg, tkin, nh2, cold, dv)
-        #sys.stderr.write("got response from radex.\n")
-        #html = open("dummy.html").read()
 
         parser = RADEXHTMLParser()
         parser.feed(html)
@@ -116,13 +114,14 @@ class RADEX:
 
 if __name__ == "__main__":
 
-    if sys.argv[1] == "list":
-        ret = RADEX().getMolecule()
-        print "Mol\tKey"
-        print "----------------"
-        for key, val in ret:
-            print key + "\t" + val
-        sys.exit()
+    if len(sys.argv) == 2:
+        if sys.argv[1] == "list":
+            ret = RADEX().getMolecule()
+            print "Mol\tKey"
+            print "----------------"
+            for key, val in ret:
+                print key + "\t" + val
+            sys.exit()
 
 
     if len(sys.argv) != 9:
